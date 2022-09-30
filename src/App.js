@@ -1,22 +1,44 @@
-import logo from './logo.svg';
+import logo from './spotify.png';
 import './App.css';
 
+import { useState } from "react";
+import ReactDOM from 'react-dom/client';
+
+
 function App() {
+  const [name, setName] = useState("");
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo} />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Spotify Playlist Generator
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://spotify.org"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Browse Music on Spotify
         </a>
+        <label>Friend #1's Favorite Song:
+        <input
+          type="text" 
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </label>
+      <label>Friend #2's Favorite Song:
+        <input
+          type="text" 
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </label>
+      <button>Generate</button>
+      
       </header>
     </div>
   );
